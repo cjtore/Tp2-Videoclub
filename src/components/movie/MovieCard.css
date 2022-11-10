@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    height: 500px;
+    background: gray;
+    width: 600px;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px;
+    overflow-y: auto;
+}
+
+img {
+    width: 300px;
+}
+
+.container{
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    margin: 10px;
+}
