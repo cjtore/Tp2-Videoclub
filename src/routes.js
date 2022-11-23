@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import HeaderLayout from "./components/container/HeaderLayout";
+import MovieBuy from "./components/movie/MovieBuy";
 import MovieDetail, { movieDetailLoader } from "./components/movie/MovieDetail";
 import MovieList, { movieLoader } from "./components/movie/MovieList";
 
@@ -18,17 +19,20 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />,
-                loader: movieLoader,
             },
             {
                 path: '/register',
                 element: <Register />,
-                loader: movieLoader,
             },
             {
             path: 'movie/:movieId',
             element: <MovieDetail />,
             loader: movieDetailLoader,
+            },
+            {
+                path: 'checkout/:movieId',
+                element: <MovieBuy />,
+                loader: movieDetailLoader,
             }]
     }
   ]);

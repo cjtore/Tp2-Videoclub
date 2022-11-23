@@ -7,10 +7,10 @@ function NavBar() {
   return (
     <nav className='navbar'>
         <div className='navbar__title'>
-          VideoClub
-            <li className='navbar__list'>
-                {links.map( ({link, path}) =>  <li className='navbar__item'><Link to={path}>{link}</Link></li> )}
-            </li>
+          <h1>Pelis4All</h1>
+            <ol className='navbar__list'>
+                {links.map( ({link, path},index) =>  <li key={index} className='navbar__item'><Link to={path}>{link}</Link></li> )}
+            </ol>
         </div>
     </nav>
   )

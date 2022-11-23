@@ -13,12 +13,21 @@
     list-style-type:none;
     display: flex;
     text-align: right;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h1{
+    font-size: 1em;
 }
 
 .navbar__title {
     margin-right: auto;
     font-size: 150%;
     padding: 12px 16px;
+    width: 100%;
+    display: flex;
+    margin-left: auto;
 }
 
 .navbar__item {

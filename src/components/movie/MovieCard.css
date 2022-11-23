@@ -1,6 +1,7 @@
+
 .card {
     display: flex;
-    height: 500px;
+    height: 350px;
     background: gray;
     width: 600px;
     padding: 40px;
@@ -10,7 +11,7 @@
 }
 
 img {
-    width: 300px;
+    width: 200px;
 }
 
 .container{

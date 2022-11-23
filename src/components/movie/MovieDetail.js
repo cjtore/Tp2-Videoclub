@@ -1,5 +1,5 @@
-import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import React, {useState} from 'react'
+import { Link, useLoaderData } from 'react-router-dom';
 import './MovieDetails.css'
 
 
@@ -19,35 +19,44 @@ export async function movieDetailLoader({ params }) {
   }
 }
 
-function MovieDetail() {
 
+function MovieDetail() {
+  const [isGoingTobuy, setIsGoingTobuy] = useState(false)
   const movie = useLoaderData();
   const urlsearch = `https://www.amazon.com/s?k=movie `;
-  console.log(movie);
+  
   
   return (
+  
 <div class="card-detail">
   <div class="card_left">
     <img src={'https://image.tmdb.org/t/p/w500'+movie.backdrop_path}/>
   </div>
   <div class="card_right">
+    
+
     <h1>{movie.title}</h1>
+    <h3>{movie.tagline}</h3>
     <div class="card_right__details">
-      <ul>
-        <li>{movie.tagline}</li>
-        <li>{movie.runtime}</li>
-        <li>{movie.release_date}</li>
-      </ul>
+      
       <div class="card_right__review">
-        <p>{movie.overview}</p>
-        <a href={movie.homepage} target="_blank">Trailer</a>
+        <h4>{movie.overview}</h4>        
       </div>
+      <ul>
+        <li>Calificación {movie.vote_average}</li>
+        <li>Duración {movie.runtime} minutos</li>
+        <li>Estreno {movie.release_date}</li>
+      </ul>
+      
       <div class="card_right__button">
-        <a href= {urlsearch+movie.title} target="_blank">COMPRAR</a>
+        <a href={movie.homepage} target="_blank">Trailer</a>
+        <a href={urlsearch+movie.title} target="_blank">Amazon</a>
+        <Link to={`/checkout/${movie.id}`}>COMPRAR</Link>
       </div>
     </div>
   </div>
 </div>
+  
 
   )
 }

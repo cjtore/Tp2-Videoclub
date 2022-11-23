@@ -21,7 +21,6 @@ export async function movieLoader() {
   }
 }
 
-
 function MovieList() {
   const movies = useLoaderData();
 
